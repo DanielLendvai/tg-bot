@@ -6,7 +6,8 @@ const bot = new TelegramBot(token);
 const app = express();
 
 
-bot.setWebHook(`https://tg-bot-five-liard.vercel.app`);
+bot.setWebHook(`https://tg-b5vmt8fuh-daniellendvais-projects.vercel.app`);
+
 app.use(express.json());
 
 app.post(`/api`, (req, res) => {
