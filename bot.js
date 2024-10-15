@@ -21,7 +21,9 @@ bot.on('message', (msg) => {
   const messageText = msg.text;
 
   if (messageText && messageText.toLowerCase().includes("tibi")) {
-    bot.sendMessage(chatId, "De ki az a Tibi?");
+    bot.sendMessage(chatId, "De ki a faszom az a Tibi?");
+  } else if (messageText && messageText.toLowerCase().includes("román")) {
+    bot.sendMessage(chatId, "Ne románozzál te geci")
   }
 });
 
