@@ -5,8 +5,8 @@ const token = '8146313524:AAG2XTS6iDVNqZj80MnOb4Kq64zCNuLgd-k';
 const bot = new TelegramBot(token);
 const app = express();
 
-// Replace with your actual Vercel deployment URL after the first deployment
-bot.setWebHook(`https://your-vercel-deployment-url/api`);
+
+bot.setWebHook(`tg-bot-five-liard.vercel.app`);
 
 app.use(express.json());
 
