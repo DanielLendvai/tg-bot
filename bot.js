@@ -15,15 +15,24 @@ app.post(`/api`, (req, res) => {
   res.sendStatus(200);
 });
 
+const members = ['Márk', 'Máté', 'Norbi', 'Dani'];
+
+bot.onText(/\/kiabuzi/, (msg) => {
+  const chatId = msg.chat.id;
+
+  const randomIndex = Math.floor(Math.random() * members.length);
+  const selectedMember = members[randomIndex];
+
+  bot.sendMessage(chatId, `🎉 Te vagy a buzi: ${selectedMember}! 🎉`);
+})
+
 // Listen for any message that contains "Tibi"
 bot.on('message', (msg) => {
   const chatId = msg.chat.id;
   const messageText = msg.text;
 
   if (messageText && messageText.toLowerCase().includes("tibi")) {
-    bot.sendMessage(chatId, "De ki a faszom az a Tibi?");
-  } else if (messageText && messageText.toLowerCase().includes("román")) {
-    bot.sendMessage(chatId, "Ne románozzál te geci")
+    bot.sendMessage(chatId, "De ki az a Tibi?");
   }
 });
 
