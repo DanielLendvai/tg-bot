@@ -13,10 +13,16 @@ const url = 'https://tg-bot-git-main-daniellendvais-projects.vercel.app';
 const webhookPath = `/bot${token}`;
 bot.setWebHook(url + webhookPath);
 
-app.post(webhookPath, (req, res) => {
-  bot.processUpdate(req.body);
-  res.sendStatus(200);
+app.post(webhookPath, async (req, res) => {
+  try {
+    await bot.processUpdate(req.body); 
+    res.sendStatus(200);
+  } catch (error) {
+    console.error('Error processing update:', error);
+    res.sendStatus(500);
+  }
 });
+
 
 bot.on('message', (msg) => {
   const chatId = msg.chat.id;
