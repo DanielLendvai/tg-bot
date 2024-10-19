@@ -3,9 +3,13 @@
   "builds": [
     {
       "src": "bot.js",
-      "use": "@vercel/node",
-      "config": { "includeFiles": ["*.js"] }
+      "use": "@vercel/node"
     }
   ],
-  "routes": [{ "src": "/(.*)", "dest": "bot.js" }]
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "bot.js"
+    }
+  ]
 }
