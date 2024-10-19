@@ -11,7 +11,7 @@ const bot = new TelegramBot(token, {
   },
 });
 
-bot.setWebHook(`${URL}/api`);
+bot.setWebHook(`${URL}`);
 
 const app = express();
 
