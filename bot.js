@@ -9,7 +9,7 @@ app.use(express.json());
 const token = process.env.TELEGRAM_BOT_TOKEN;
 const bot = new TelegramBot(token);
 
-const url = 'https://tg-bot-git-main-daniellendvais-projects.vercel.app/api'; 
+const url = 'https://tg-bot-git-main-daniellendvais-projects.vercel.app'; 
 const webhookPath = `/bot${token}`;
 bot.setWebHook(url + webhookPath);
 
